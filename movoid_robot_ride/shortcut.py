@@ -45,7 +45,7 @@ def create_shortcut_windows(name: str):
         link.unlink()
     import pythoncom
     shortcut = pythoncom.CoCreateInstance(shell.CLSID_ShellLink, None, pythoncom.CLSCTX_INPROC_SERVER, shell.IID_IShellLink)
-    command_args = " -c \"from movoid_robot_ride.shortcut import start_ride; start_ride()\""
+    command_args = " -c \"from movoid_robot_ride import start_ride; start_ride()\""
     shortcut.SetPath(sys.executable)
     shortcut.SetArguments(command_args)
     shortcut.SetDescription("Robot Framework testdata editor")
